@@ -1,16 +1,5 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background-color: #0a0a10;
-  background-size: cover;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-export const Image = styled.img`
-  margin-bottom: 25px;
-`;
 export const Input = styled.input`
   outline: none;
   font-weight: 300;
@@ -25,9 +14,4 @@ export const Input = styled.input`
   height: 58px;
   margin-bottom: 40px;
   padding-left: 20px;  
-`;
-
-export const ContainerItens = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

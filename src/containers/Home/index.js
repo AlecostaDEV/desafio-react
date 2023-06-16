@@ -5,15 +5,12 @@ import axios from "axios";
 
 import BurgerHomeImg from "../../assets/burger-home-img.svg";
 
-import {
-  Container,
-  Image,
-  ContainerItens,
-  H1,
-  InputLabel,
-  Input,
-  Button,
-} from "./styles";
+import H1 from "../../components/Title";
+import InputLabel from "../../components/InputLabel";
+//import Input from "../../components/Input";
+import Button from "../../components/Button";
+
+import { Container, Image, ContainerItens, Input } from "./styles";
 
 const App = () => {
   const [orders, setOrders] = useState([]);
@@ -22,7 +19,7 @@ const App = () => {
   const inputName = useRef();
 
   async function addNewOrder() {
-    const { data: newOrder } = await axios.post("http://localhost:3001/order", {
+    const { data: newOrder } = await axios.post("http://localhost:3001/order", {      
       orderItems: inputOrder.current.value,
       clientName: inputName.current.value,
     });
@@ -39,10 +36,10 @@ const App = () => {
         <H1>Faça seu pedido!</H1>
 
         <InputLabel>Pedido</InputLabel>
-        <Input ref={inputOrder} placeholder="seu pedido" />
+        <Input placeholder="seu pedido" ref={inputOrder} />
 
         <InputLabel>Nome do Cliente</InputLabel>
-        <Input ref={inputName} placeholder="seu nome" />
+        <Input placeholder="seu nome" ref={inputName} />
 
         <Button onClick={addNewOrder}>Novo Pedido</Button>
       </ContainerItens>
