@@ -14,6 +14,9 @@ export const Button = styled.button`
 
   margin-bottom: 50px;
 
+  margin-top: ${(props) =>
+    props.isback ? "80px" : ""};
+
   cursor: pointer;
 
   &:hover {
